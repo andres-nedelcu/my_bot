@@ -53,6 +53,10 @@
         </xacro:inertial_box>
     </link>
 
+    <gazebo reference="chassis">
+        <material>Gazebo/White</material>
+    </gazebo>
+
     <!-- Left Back wheel link-->
 
     <joint name="left_back_wheel_joint" type="continuous">
@@ -78,6 +82,10 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
+
+    <gazebo reference="left_back_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
 
     <!-- Right Back wheel link-->
 
@@ -105,6 +113,10 @@
         </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="right_back_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
     <!-- Left front wheel link-->
 
     <joint name="left_front_wheel_joint" type="continuous">
@@ -131,6 +143,10 @@
         </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="left_front_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
     <!-- Right front wheel link-->
 
     <joint name="right_front_wheel_joint" type="continuous">
@@ -156,4 +172,9 @@
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>    
+
+    <gazebo reference="right_front_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
 </robot>
