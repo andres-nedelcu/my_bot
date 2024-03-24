@@ -11,8 +11,8 @@
             <right_joint>right_back_wheel_joint</right_joint>
             <right_joint>right_front_wheel_joint</right_joint>
             
-            <wheel_separation>0.3194</wheel_separation>
-            <wheel_diameter>0.12</wheel_diameter>
+            <wheel_separation>0.3950</wheel_separation>
+            <wheel_diameter>0.14</wheel_diameter>
 
             <!--Limits-->
             <max_wheel_torque>200</max_wheel_torque>
