@@ -61,23 +61,23 @@
     <joint name="left_back_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="left_back_wheel"/>
-        <origin xyz="0.13 0.1975 0" rpy="-${pi/2} 0 0"/>
+        <origin xyz="0 0.16 0" rpy="-${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
     <link name="left_back_wheel">
-        <visual>
+        <!--visual>
             <geometry>
-                <cylinder radius="0.07" length="0.06"/>
+                <cylinder radius="0.035" length="0.02"/>
             </geometry>
             <material name="blue"/>
-        </visual>
-        <collision>
+        </visual-->
+        <!--collision>
             <geometry>
-                <sphere radius="0.07"/>
+                <sphere radius="0.035"/>
             </geometry>
-        </collision>
-        <xacro:inertial_cylinder mass="0.2" length="0.06" radius="0.07">
+        </collision-->
+        <xacro:inertial_cylinder mass="0.2" length="0.02" radius="0.035">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -91,23 +91,23 @@
     <joint name="left_front_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="left_front_wheel"/>
-        <origin xyz="-0.13 0.1975 0" rpy="-${pi/2} 0 0"/>
+        <origin xyz="0.13 0.16 0" rpy="-${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 
     <link name="left_front_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.07" length="0.06"/>
+                <cylinder radius="0.035" length="0.02"/>
             </geometry>
             <material name="blue"/>
         </visual>
         <collision>
             <geometry>
-                <sphere radius="0.07"/>
+                <sphere radius="0.035"/>
             </geometry>
         </collision>
-        <xacro:inertial_cylinder mass="0.2" length="0.06" radius="0.07">
+        <xacro:inertial_cylinder mass="0.2" length="0.02" radius="0.035">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -121,23 +121,23 @@
     <joint name="right_back_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="right_back_wheel"/>
-        <origin xyz="0.13 -0.1975 0" rpy="${pi/2} 0 0"/>
+        <origin xyz="0 -0.16 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 -1"/>
     </joint>
 
     <link name="right_back_wheel">
-        <visual>
+        <!--visual>
             <geometry>
-                <cylinder radius="0.07" length="0.06"/>
+                <cylinder radius="0.035" length="0.02"/>
             </geometry>
             <material name="blue"/>
-        </visual>
-        <collision>
+        </visual-->
+        <!--collision>
             <geometry>
-                <sphere radius="0.07"/>
+                <sphere radius="0.035"/>
             </geometry>
-        </collision>
-        <xacro:inertial_cylinder mass="0.2" length="0.06" radius="0.07">
+        </collision-->
+        <xacro:inertial_cylinder mass="0.2" length="0.02" radius="0.035">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -151,29 +151,91 @@
     <joint name="right_front_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="right_front_wheel"/>
-        <origin xyz="-0.13 -0.1975 0" rpy="${pi/2} 0 0"/>
+        <origin xyz="0.13 -0.16 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 -1"/>
     </joint>
 
     <link name="right_front_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.07" length="0.06"/>
+                <cylinder radius="0.035" length="0.02"/>
             </geometry>
             <material name="blue"/>
         </visual>
         <collision>
             <geometry>
-                <sphere radius="0.07"/>
+                <sphere radius="0.035"/>
             </geometry>
         </collision>
-        <xacro:inertial_cylinder mass="0.2" length="0.06" radius="0.07">
+        <xacro:inertial_cylinder mass="0.2" length="0.02" radius="0.035">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>    
 
     <gazebo reference="right_front_wheel">
         <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!--Left Caster wheel Link-->
+
+    <joint name="left_caster_wheel_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="left_caster_wheel"/>
+        <origin xyz="0.13 0.09 0"/>
+    </joint>
+
+    <link name="left_caster_wheel">
+        <visual>
+            <geometry>
+                <sphere radius="0.035"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <sphere radius="0.035"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_sphere mass="0.2" radius="0.035">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_sphere>
+    </link>
+
+    <gazebo reference="left_caster_wheel">
+        <material>Gazebo/Black</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+    </gazebo>
+
+    <!--Right Caster wheel Link-->
+
+    <joint name="right_caster_wheel_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="right_caster_wheel"/>
+        <origin xyz="0.13 -0.09 0"/>
+    </joint>
+
+    <link name="right_caster_wheel">
+        <visual>
+            <geometry>
+                <sphere radius="0.035"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <sphere radius="0.035"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_sphere mass="0.2" radius="0.035">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_sphere>
+    </link>
+
+    <gazebo reference="right_caster_wheel">
+        <material>Gazebo/Black</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
     </gazebo>
 
 </robot>
