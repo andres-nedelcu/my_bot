@@ -1,7 +1,7 @@
 controller_manager:
   ros__parameters:
     update_rate: 30
-    use_sim_time: true
+
 
     diff_cont:
       type: diff_drive_controller/DiffDriveController
@@ -12,7 +12,7 @@ controller_manager:
 diff_cont:
   ros__parameters:
 
-    publish_rate: 30.0
+    publish_rate: 50.0
      # You can set this higher than the controller manager update rate, but it will be throttled
     
     base_frame_id: base_link
