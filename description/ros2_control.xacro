@@ -4,7 +4,7 @@
     <xacro:unless value="$(arg sim_mode)">
         <ros2_control name="RealRobot" type="system">
             <hardware>
-                <plugin>diffdrive_arduino/DiffDriveArduino</plugin>
+                <plugin>diffdrive_arduino/DiffDriveArduinoHardware</plugin>
                 <param name="left_back_wheel_name">left_back_wheel_joint</param>
                 <param name="left_front_wheel_name">left_front_wheel_joint</param>
                 <param name="right_back_wheel_name">right_back_wheel_joint</param>
@@ -12,40 +12,40 @@
                 <param name="loop_rate">30</param>
                 <param name="device">/dev/ttyACM0</param>
                 <param name="baud_rate">57600</param>
-                <param name="timeout">1000</param>
-                <param name="enc_counts_per_rev">3436</param>
+                <param name="timeout_ms">1000</param>
+                <param name="enc_counts_per_rev">2500</param>
             </hardware>
             <joint name="left_back_wheel_joint">
                 <command_interface name ="velocity">
                     <param name="min">-50</param>
                     <param name="max">50</param>
                 </command_interface>
-                <state_interface name="velocity"/>
                 <state_interface name="position"/>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="left_front_wheel_joint">
                 <command_interface name ="velocity">
                     <param name="min">-50</param>
                     <param name="max">50</param>
                 </command_interface>
-                <state_interface name="velocity"/>
                 <state_interface name="position"/>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="right_back_wheel_joint">
                 <command_interface name ="velocity">
                     <param name="min">-50</param>
                     <param name="max">50</param>
                 </command_interface>
-                <state_interface name="velocity"/>
                 <state_interface name="position"/>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="right_front_wheel_joint">
                 <command_interface name ="velocity">
                     <param name="min">-50</param>
                     <param name="max">50</param>
                 </command_interface>
-                <state_interface name="velocity"/>
                 <state_interface name="position"/>
+                <state_interface name="velocity"/>
             </joint>
         </ros2_control>
     </xacro:unless>
@@ -60,32 +60,32 @@
                     <param name="min">-50</param>
                     <param name="max">50</param>
                 </command_interface>
-                <state_interface name="velocity"/>
                 <state_interface name="position"/>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="right_back_wheel_joint">
                 <command_interface name ="velocity">
                     <param name="min">-50</param>
                     <param name="max">50</param>
                 </command_interface>
-                <state_interface name="velocity"/>
                 <state_interface name="position"/>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="left_front_wheel_joint">
                 <command_interface name ="velocity">
                     <param name="min">-50</param>
                     <param name="max">50</param>
                 </command_interface>
-                <state_interface name="velocity"/>
                 <state_interface name="position"/>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="right_front_wheel_joint">
                 <command_interface name ="velocity">
                     <param name="min">-50</param>
                     <param name="max">50</param>
                 </command_interface>
-                <state_interface name="velocity"/>
                 <state_interface name="position"/>
+                <state_interface name="velocity"/>
             </joint>
         </ros2_control>
     </xacro:if>
